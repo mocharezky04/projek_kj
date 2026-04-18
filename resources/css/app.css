@@ -1,0 +1,60 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+    --brand-primary: #0f4c81;
+    --brand-accent: #f08c2e;
+    --brand-soft: #f4f8fc;
+}
+
+body {
+    background-color: #f6f8fb;
+    color: #1d2a39;
+}
+
+.hero-section {
+    background: linear-gradient(130deg, var(--brand-primary), #1f6fb2);
+    color: #ffffff;
+    border-radius: 1rem;
+}
+
+.stat-card {
+    border: 0;
+    border-radius: 0.85rem;
+    box-shadow: 0 8px 20px rgba(17, 24, 39, 0.08);
+}
+
+.book-card {
+    border: 0;
+    border-radius: 0.9rem;
+    box-shadow: 0 6px 18px rgba(15, 76, 129, 0.12);
+    transition: transform 0.2s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+}
+
+.book-cover {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.page-title {
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+.auth-card {
+    border-radius: 1rem;
+    box-shadow: 0 14px 30px rgba(29, 42, 57, 0.15);
+}
+
+.footer-note {
+    color: #5b6875;
+    font-size: 0.9rem;
+}
