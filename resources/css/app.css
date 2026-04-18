@@ -1,60 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap');
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 :root {
-    --brand-primary: #0f4c81;
-    --brand-accent: #f08c2e;
-    --brand-soft: #f4f8fc;
+    --bg-page: #f5f7fb;
+    --bg-surface: #ffffff;
+    --bg-soft: #eef2f9;
+    --ink: #1f2937;
+    --ink-soft: #5f6b7a;
+    --navy: #0f2747;
+    --navy-2: #15345f;
+    --primary: #2d5bff;
+    --primary-soft: #dfe8ff;
+    --success-soft: #e5f7ec;
+    --success-ink: #1a7f45;
+    --border: #e4e9f2;
+    --shadow-sm: 0 8px 24px rgba(15, 39, 71, 0.08);
+    --shadow-md: 0 16px 34px rgba(15, 39, 71, 0.12);
 }
 
 body {
-    background-color: #f6f8fb;
-    color: #1d2a39;
+    font-family: 'DM Sans', sans-serif;
+    background: radial-gradient(circle at top right, #edf3ff 0%, #f5f7fb 45%);
+    color: var(--ink);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.page-title,
+.brand-title {
+    font-family: 'Playfair Display', serif;
+    color: #11243f;
+}
+
+.nav-main {
+    background: linear-gradient(90deg, var(--navy), var(--navy-2));
+    box-shadow: 0 8px 20px rgba(6, 21, 41, 0.35);
+}
+
+.nav-main .navbar-brand {
+    color: #f4f7ff;
+    font-size: 1.65rem;
+    letter-spacing: 0.2px;
+}
+
+.nav-main .navbar-brand:hover {
+    color: #ffffff;
+}
+
+.nav-main .nav-link {
+    color: rgba(241, 245, 255, 0.82);
+    font-weight: 500;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.nav-main .nav-link:hover,
+.nav-main .nav-link.active {
+    color: #ffffff;
+}
+
+.nav-main .nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: 0.35rem;
+    right: 0.35rem;
+    bottom: 0;
+    height: 2.5px;
+    border-radius: 999px;
+    background: #7fa7ff;
+}
+
+.nav-main .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.nav-main .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.btn {
+    border-radius: 0.65rem;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: #214ae6;
+    border-color: #214ae6;
+}
+
+.btn-outline-light {
+    border-color: rgba(255, 255, 255, 0.65);
 }
 
 .hero-section {
-    background: linear-gradient(130deg, var(--brand-primary), #1f6fb2);
+    border-radius: 1.1rem;
+    background: linear-gradient(130deg, #173d71, #245da9 55%, #2f73ca);
     color: #ffffff;
+    box-shadow: var(--shadow-md);
+}
+
+.hero-section h1,
+.hero-section h2,
+.hero-section h3 {
+    color: #ffffff;
+}
+
+.surface-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
     border-radius: 1rem;
+    box-shadow: var(--shadow-sm);
 }
 
 .stat-card {
-    border: 0;
-    border-radius: 0.85rem;
-    box-shadow: 0 8px 20px rgba(17, 24, 39, 0.08);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-number {
+    font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+    line-height: 1.1;
+    margin: 0;
+    font-weight: 700;
+    color: #132f56;
 }
 
 .book-card {
-    border: 0;
-    border-radius: 0.9rem;
-    box-shadow: 0 6px 18px rgba(15, 76, 129, 0.12);
-    transition: transform 0.2s ease;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .book-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.book-grid .book-item {
+    animation: card-fade 0.55s ease both;
+}
+
+.book-grid .book-item:nth-child(2n) {
+    animation-delay: 0.08s;
+}
+
+.book-grid .book-item:nth-child(3n) {
+    animation-delay: 0.16s;
+}
+
+@keyframes card-fade {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .book-cover {
     width: 100%;
-    height: 220px;
+    height: 230px;
     object-fit: cover;
+    background-color: #eef2f8;
 }
 
-.page-title {
+.stock-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: var(--success-soft);
+    color: var(--success-ink);
+    border: 1px solid #c8ebd7;
+    border-radius: 999px;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 0.2px;
 }
 
-.navbar-brand {
+.search-panel {
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    background: #ffffff;
+    box-shadow: var(--shadow-sm);
+}
+
+.detail-stat {
+    border: 1px solid var(--border);
+    border-radius: 0.85rem;
+    background: #f9fbff;
+    padding: 0.9rem 1rem;
+}
+
+.detail-stat .label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    margin-bottom: 0.25rem;
+}
+
+.detail-stat .value {
     font-weight: 700;
+    color: #1a3760;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #233851;
+}
+
+.form-control,
+.form-select {
+    border-radius: 0.7rem;
+    border-color: #d6deea;
+    padding: 0.62rem 0.78rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #7d9cff;
+    box-shadow: 0 0 0 0.22rem rgba(45, 91, 255, 0.16);
+}
+
+.auth-page-wrap {
+    border-radius: 1rem;
+    background: linear-gradient(180deg, #f7f9ff, #edf3ff);
+    border: 1px solid #dde6ff;
 }
 
 .auth-card {
     border-radius: 1rem;
-    box-shadow: 0 14px 30px rgba(29, 42, 57, 0.15);
+    box-shadow: var(--shadow-md);
+    border: 1px solid #dde5f2;
+}
+
+.auth-title {
+    font-size: 1.65rem;
+    margin-bottom: 0.25rem;
+}
+
+.auth-subtitle {
+    color: var(--ink-soft);
+}
+
+.empty-state {
+    border-radius: 1rem;
+    border: 1px dashed #ccd8ea;
+    background: #f8fbff;
+    color: #49607d;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
 }
 
 .footer-note {
-    color: #5b6875;
+    color: #5c6880;
     font-size: 0.9rem;
+}
+
+@media (max-width: 991.98px) {
+    .nav-main .nav-link.active::after {
+        display: none;
+    }
 }
