@@ -66,5 +66,5 @@
         </div>
     </section>
 
-    <p class="footer-note mt-5 mb-0">Tugas 1 PBW - Laravel MVC - Tema Perpustakaan Digital</p>
+    <p class="footer-note mt-5 mb-0">Laravel MVC - Tema Perpustakaan Digital</p>
 @endsection
