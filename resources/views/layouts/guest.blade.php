@@ -12,16 +12,18 @@
     <body>
         @include('layouts.navigation')
 
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-8 col-lg-5">
-                    <div class="card auth-card">
-                        <div class="card-body p-4">
-                            {{ $slot }}
+        <main class="auth-layout">
+            <div class="container content-wrap">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <div class="card auth-card">
+                            <div class="card-body p-4 p-md-5">
+                                {{ $slot }}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     </body>
 </html>

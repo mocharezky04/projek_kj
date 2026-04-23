@@ -12,25 +12,23 @@
     <body>
         @include('layouts.navigation')
 
-        <div class="container py-4">
-            @if (session('status'))
-                <div class="alert alert-success">{{ session('status') }}</div>
-            @endif
+        <main class="main-shell">
+            <div class="container py-4 py-md-5 content-wrap">
+                @if (session('status'))
+                    <div class="alert flash-alert mb-4">{{ session('status') }}</div>
+                @endif
 
-            @isset($header)
-                <div class="mb-4">
-                    {{ $header }}
-                </div>
-            @endisset
+                @isset($header)
+                    <div class="mb-4">{{ $header }}</div>
+                @endisset
 
-            @hasSection('header')
-                <div class="mb-4">
-                    @yield('header')
-                </div>
-            @endif
+                @hasSection('header')
+                    <div class="mb-4">@yield('header')</div>
+                @endif
 
-            @yield('content')
-            {{ $slot ?? '' }}
-        </div>
+                @yield('content')
+                {{ $slot ?? '' }}
+            </div>
+        </main>
     </body>
 </html>
